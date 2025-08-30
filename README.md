@@ -1,47 +1,57 @@
+
 # Layout HTML Bootstrap
 
-Proyek halaman sederhana menggunakan Bootstrap 5 via CDN (tanpa npm) yang berisi:
-- Navbar sticky di atas
-- Carousel gambar + caption
-- Breadcrumb
-- Layout 2 kolom: Sidebar di kiri, konten utama di kanan
-- Tabel 5 kolom 10 baris (placeholder)
-- Form isian siswa (placeholder)
+Proyek halaman web sederhana menggunakan Bootstrap 5 via CDN, berisi:
+- Landing page (index.html) dengan tombol Login dan Register
+- Halaman Login dan Register di folder `auth/`
+- Dashboard di folder `page/` dengan sidebar, carousel, breadcrumbs, dan tabel
 
 ## Teknologi
 - HTML5
 - Bootstrap 5.3 CDN (CSS + JS)
 
 ## Cara Menjalankan
-1. Buka file `Index.html` langsung di browser, atau
-2. VS Code: install ekstensi “Live Server” → klik kanan `Index.html` → Open with Live Server.
+1. Buka file `app/index.html` langsung di browser
+2. Atau gunakan ekstensi “Live Server” di VS Code pada file `app/index.html`
 
 Koneksi internet diperlukan untuk memuat Bootstrap dan gambar dari CDN.
 
-## Struktur
+## Struktur Folder
 ```
 layout_html_bootstrap/
-├─ Index.html
-└─ README.md
+├─ README.md
+└─ app/
+  ├─ index.html
+  ├─ auth/
+  │   ├─ Masuk.html
+  │   └─ Register.html
+  └─ page/
+    └─ dashboard.html
 ```
 
-## Kustomisasi Cepat
-- Warna navbar:
-  - Gelap: `bg-dark navbar-dark`
-  - Biru: `bg-primary navbar-dark`
-  - Terang: `bg-light navbar-light`
-- Navbar tetap di atas: tambahkan `sticky-top` pada `<nav>`.
-- Sidebar lebih sempit: ubah grid sidebar/main, misal:
-  - Sidebar: `col-lg-2` → `col-lg-1`
-  - Konten: `col-lg-10` → `col-lg-11`
-- Tinggi sidebar relatif layar: `min-vh-25 | 50 | 75 | 100`
-- Gambar carousel:
-  - Ukuran konsisten: atur `w-75` atau `w-50` pada `<img>` dan `mx-auto` agar di tengah.
-  - Caption di tengah: tambahkan `text-center` pada `.carousel-caption`.
+## Navigasi
+- Tombol Login di landing page menuju `auth/Masuk.html`
+- Tombol Register di landing page dan login menuju `auth/Register.html`
+- Tombol Login di halaman login menuju `page/dashboard.html`
+- Tombol Logout di dashboard menuju `index.html`
+
+## Fitur
+- Navbar sticky di atas
+- Carousel gambar + caption
+- Breadcrumb
+- Sidebar di kiri, konten utama di kanan
+- Tabel (placeholder)
+
+## Kustomisasi
+- Warna navbar: `bg-dark`, `bg-primary`, `bg-light`
+- Sidebar lebar: ubah grid Bootstrap
+- Tinggi sidebar: `min-vh-25`, `min-vh-50`, dst
+- Gambar carousel: atur lebar dengan `w-75`, `mx-auto`
 
 ## Catatan
-- Proyek ini tidak menggunakan `node_modules` atau `npm`. Bootstrap dipanggil lewat CDN pada `<head>`.
-- Hindari komentar `// ...` di HTML. Gunakan `<!-- ... -->`.
+- Bootstrap dipanggil lewat CDN pada `<head>`
+- Tidak menggunakan npm atau node_modules
+- Komentar HTML gunakan `<!-- ... -->`
 
 ## Lisensi
 Untuk keperluan pembelajaran.
